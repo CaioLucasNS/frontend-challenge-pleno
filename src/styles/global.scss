@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --white: #FFFFFF;
+
+    --blue-100: #00bcf9;
+    --blue-300: #0098ef;
+    --blue-700: #00192b;
+
+    --green-200: #00f690;
+}
+
+@media (max-width: 1080px) {
+    html {
+        font-size: 93.75%;
+    }
+}
+
+@media (max-width: 720px) {
+    html {
+        font-size: 87.5%;
+    }
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit; // assume a cor do elemento pai
+    text-decoration: none;
+}
