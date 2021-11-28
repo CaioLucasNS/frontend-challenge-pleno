@@ -1,10 +1,29 @@
-.search-button {
-    background: none;
-    border-radius: 3vh;
-    font-family: Roboto, sans-serif;
+.nav-container {
+    .search-button {
+        background: none;
+        border-radius: 3vh;
+        font-family: Roboto, sans-serif;
+    }
+    
+    .start-button {
+        border: 1px solid #fff;
+        border-radius: 3vh;
+    }
 }
 
-.start-button {
-    border: 1px solid #fff;
-    border-radius: 3vh;
+@media (max-width: 990px) {
+    .colapsive-nav {
+        height: 100vh
+    }
+}
+@media (max-width: 780px) {
+    .colapsive-nav {
+        height: 100vh
+    }
+}
+// mobile
+@media (max-width: 425px) {
+    .colapsive-nav {
+        height: 100vh
+    }
 }

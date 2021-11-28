@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Navbar,
   Nav,
@@ -26,29 +26,38 @@ import { Logo } from '../../components/Logo/Logo';
 import './NavbarComponent.scss';
 
 export function NavbarComponent() {
+  const [expanded, setExpanded] = useState(false);
+
+  const hideNav = () => {
+    return setExpanded(expanded ? false : "expanded")
+  }
+
   return (
     <Router>
       {/* navbar */}
       <div>
-        <Navbar bg="none" variant={"light"} expand="lg">
-          <Container>
-            <Navbar.Brand as={Link} to={"/home"}>
-              <Logo firstColor="#009eef" secondColor="#c7c7c7" />
+        <Navbar bg="none" variant={"light"} expand="lg" expanded={expanded}>
+          <Container className="nav-container">
+            <Navbar.Brand as={Link} to={"/home"} onClick={hideNav} >
+              <Logo 
+                firstColor={expanded && "#009eef"} 
+                secondColor={expanded && "#c7c7c7" }
+              />
             </Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={hideNav} />
 
             <Navbar.Collapse id="basic-navbar-nav" className="colapsive-nav">
               <Nav className="me-auto">
                 {/* <Nav.Link as={Link} to={"/home"}>
                   Home
                 </Nav.Link> */}
-                <Nav.Link as={Link} to={"/about"}>
+                <Nav.Link as={Link} to={"/about"} onClick={hideNav}>
                   Sobre
                 </Nav.Link>
-                <Nav.Link as={Link} to={"/prices"}>
+                <Nav.Link as={Link} to={"/prices"} onClick={hideNav}>
                   Preços
                 </Nav.Link>
-                <Nav.Link as={Link} to={"/developers"}>
+                <Nav.Link as={Link} to={"/developers"} onClick={hideNav}>
                   Desenvolvedores
                 </Nav.Link>
 
@@ -68,16 +77,16 @@ export function NavbarComponent() {
               </Nav>
 
               <Nav>
-                <Nav.Link as={Link} to={"/home"}>
+                <Nav.Link as={Link} to={"/home"} onClick={hideNav}>
                     <AiOutlineSearch />
                 </Nav.Link>
-                <Nav.Link as={Link} to={"/help"}>
+                <Nav.Link as={Link} to={"/help"} onClick={hideNav}>
                   Ajuda
                 </Nav.Link>
-                <Nav.Link as={Link} to={"/contact"}>
+                <Nav.Link as={Link} to={"/contact"} onClick={hideNav}>
                   Contato
                 </Nav.Link>
-                <Nav.Link as={Link} to={"/start"} className="start-button">
+                <Nav.Link as={Link} to={"/start"} className="start-button" onClick={hideNav}>
                   Começar
                 </Nav.Link>
               </Nav>
