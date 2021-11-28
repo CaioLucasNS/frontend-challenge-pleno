@@ -4,7 +4,6 @@ import {
   Nav,
   NavDropdown,
   Container,
-  Button,
 } from "react-bootstrap";
 import {
   BrowserRouter as Router,
@@ -12,8 +11,9 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import { AiOutlineSearch } from 'react-icons/ai';
 
-import { Home } from '../../screens/Home';
+import { Home } from '../../screens/Home/Home';
 import { About } from '../../screens/About';
 import { Contact } from '../../screens/Contact';
 import { Developers } from '../../screens/Developers';
@@ -21,19 +21,23 @@ import { Help } from '../../screens/Help';
 import { Prices } from '../../screens/Prices';
 import { Start } from '../../screens/Start';
 
-import './NavbarComponent.css';
+import { Logo } from '../../components/Logo/Logo';
+
+import './NavbarComponent.scss';
 
 export function NavbarComponent() {
   return (
     <Router>
       {/* navbar */}
       <div>
-        <Navbar bg="dark" variant={"dark"} expand="lg">
+        <Navbar bg="none" variant={"light"} expand="lg">
           <Container>
-            <Navbar.Brand as={Link} to={"/home"}>Slider Ezoom</Navbar.Brand>
+            <Navbar.Brand as={Link} to={"/home"}>
+              <Logo firstColor="#009eef" secondColor="#c7c7c7" />
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-            <Navbar.Collapse id="basic-navbar-nav">
+            <Navbar.Collapse id="basic-navbar-nav" className="colapsive-nav">
               <Nav className="me-auto">
                 {/* <Nav.Link as={Link} to={"/home"}>
                   Home
@@ -65,9 +69,7 @@ export function NavbarComponent() {
 
               <Nav>
                 <Nav.Link as={Link} to={"/home"}>
-                  <Button className="search-button" variant="outline-light">
-                    Pesquisar
-                  </Button>
+                    <AiOutlineSearch />
                 </Nav.Link>
                 <Nav.Link as={Link} to={"/help"}>
                   Ajuda
@@ -75,7 +77,7 @@ export function NavbarComponent() {
                 <Nav.Link as={Link} to={"/contact"}>
                   Contato
                 </Nav.Link>
-                <Nav.Link as={Link} to={"/start"}>
+                <Nav.Link as={Link} to={"/start"} className="start-button">
                   Começar
                 </Nav.Link>
               </Nav>
@@ -86,7 +88,6 @@ export function NavbarComponent() {
 
       {/* navigation */}
       <div>
-        
         <Routes>
           <Route path="/home" element={<Home/>}/>
           <Route path="/about" element={<About/>}/>

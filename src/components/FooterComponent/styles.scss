@@ -1,0 +1,42 @@
+footer {
+    // background: green;
+    position: absolute;
+    bottom: 0;
+
+    width: 100vw;
+    height: 5vh
+}
+
+#container-footer {
+    display: flex;
+    align-items: center;
+
+    font-family: Raleway, sans-serif;
+    font-size: 1.4rem;
+
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 25vw;
+        margin-bottom: -0.7em;
+
+        font-size: 0.8em
+    }
+
+    .content-footer {
+        display: flex;
+        width: 75vw;
+        justify-content: flex-end;
+        font-size: 0.5em;
+
+        p {
+            font-family: Roboto, sans-serif;
+            font-weight: 700;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0.2em;
+            margin-right: 1em;
+        }
+    }
+}

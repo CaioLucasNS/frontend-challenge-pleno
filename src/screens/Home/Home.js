@@ -1,9 +1,13 @@
 import React from 'react';
 
+import './styles.scss';
+
 export function Home() {
     return (
         <div>
-            <h1>Home</h1>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
     );
 }

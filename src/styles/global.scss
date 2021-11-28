@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+// html {
+// 	font-size: 62.5%
+// }
+
+// body {
+// 	font-size: 1.6rem //16px (padrão)
+// }
+
 :root {
     --white: #FFFFFF;
     --black: #000000;
@@ -15,17 +23,27 @@
     --green-200: #00f690;
 }
 
+// desktop
 @media (max-width: 1080px) {
     html {
-        font-size: 93.75%;
+        font-size: 93.75%; //15
     }
 }
 
-@media (max-width: 720px) {
+// tablet
+@media (max-width: 780px) {
     html {
-        font-size: 87.5%;
+        font-size: 87.5%; //14
     }
 }
+
+// mobile
+@media (max-width: 425px) {
+    html {
+        font-size: 81.25%;
+    }
+}
+
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
@@ -52,3 +70,4 @@ a {
     color: inherit; // assume a cor do elemento pai
     text-decoration: none;
 }
+
