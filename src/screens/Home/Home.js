@@ -23,7 +23,7 @@ export function Home() {
     
     return (
         <div id="container">
-            <Banner />
+            <Banner data={clients}/>
             {
                 clients.length > 0 && services .length > 0 &&
                 <ClientsField clients={clients} services={services} />

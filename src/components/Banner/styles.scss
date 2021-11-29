@@ -4,10 +4,10 @@
 
     display: flex;
     flex-direction: column;
-    font: .8rem  Raleway, sans-serif;
-    padding: 10vw;
     justify-content: center;
     align-items: center;
+    font: .8rem  Raleway, sans-serif;
+    padding: 10vw;
     text-align: center;
     color: #fff;
     
@@ -19,18 +19,9 @@
     }
 
     .content-texts {
+        display: flex;
         justify-content: center;
         align-items: center;
-
-        .title {
-            font-size: 2rem;
-            font-weight: 900;
-        }
-
-        .text {
-            font-size: .8em;
-            font-family: Roboto, sans-serif;
-        }
     };
 
     .content-buttons {
@@ -38,8 +29,11 @@
         width: 40vw;
         
         justify-content: space-around;
+        align-items: center;
         font-family: Roboto, sans-serif;
         font-weight: 700;
+        margin-top: 6px;
+        margin-bottom: 0;
 
         .about-button{
             display: flex;
