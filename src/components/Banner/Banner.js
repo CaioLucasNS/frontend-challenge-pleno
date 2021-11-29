@@ -3,6 +3,8 @@ import React from "react";
 import "./styles.scss";
 
 export function Banner() {
+  const currentUrl = window.location.href;
+
   return (
     <div id="container-banner">
       <div className="content-texts">
@@ -20,11 +22,21 @@ export function Banner() {
 
       <div className="content-buttons">
         <p>
-          <a className="about-button">Sobre o SlideEzoom</a>
+          <a
+            className="about-button"
+            href={currentUrl + "about"}
+          >
+            Sobre o SlideEzoom
+          </a>
         </p>
 
         <p>
-          <a className="button-start">Começar</a>
+          <a
+            className="button-start"
+            href={currentUrl + "start"}
+          >
+            Começar
+          </a>
         </p>
       </div>
     </div>

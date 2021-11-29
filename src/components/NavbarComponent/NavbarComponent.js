@@ -47,13 +47,16 @@ export function NavbarComponent() {
       <div>
         <Navbar bg="none" variant={windowDimensions.width > 991 ? "dark" : "light"} expand="lg" expanded={expanded}>
           <Container className="nav-container">
-            <Navbar.Brand as={Link} to={"/home"} onClick={hideNav} >
+            <Navbar.Brand as={Link} to={"/"} onClick={hideNav}>
               <Logo />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={hideNav} />
 
             <Navbar.Collapse id="basic-navbar-nav" className="colapsive-nav">
               <Nav className="me-auto">
+                <Nav.Link as={Link} to={"/"} onClick={hideNav}>
+                  Início
+                </Nav.Link>
                 <Nav.Link as={Link} to={"/about"} onClick={hideNav}>
                   Sobre
                 </Nav.Link>
@@ -84,7 +87,7 @@ export function NavbarComponent() {
       {/* navigation */}
       <div>
         <Routes>
-          <Route path="/home" element={<Home/>}/>
+          <Route path="/" element={<Home/>}/>
           <Route path="/about" element={<About/>}/>
           <Route path="/prices" element={<Prices/>}/>
           <Route path="/developers" element={<Developers/>}/>
