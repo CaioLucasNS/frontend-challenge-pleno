@@ -1,9 +1,47 @@
 #container{
     margin-top: -4.5rem;
     
-    .div2{
-        background: gray;
+    .client-container{
         height: 44vh;
+
+        .clients-content {
+            // background: red;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            padding: .5rem;
+            border-bottom: .5px solid;
+            border-bottom-color: #e4e4e4;
+            margin: auto 8vw auto 8vw;
+            height: 5vh;
+            // width: 100%;
+
+            .clients-list  {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                margin: 0 0 0 10px;
+
+                h3 {
+                    align-items: center;
+                    text-align: center;
+    
+                    font-size: .8em
+                }
+
+                img {
+                    width: 1.2em;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    filter: brightness(0.6)
+                }
+            }
+            
+        }
     };
 
     .div3{
