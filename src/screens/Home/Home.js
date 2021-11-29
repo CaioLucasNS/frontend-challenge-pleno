@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Banner } from '../../components/Banner/Banner';
 import { ClientsField } from './ClientsField';
+import { Newsletter } from './Newsletter';
 
 import api from '../../services/api';
 
@@ -24,10 +25,10 @@ export function Home() {
         <div id="container">
             <Banner />
             {
-                clients.length > 0 &&
+                clients.length > 0 && services .length > 0 &&
                 <ClientsField clients={clients} services={services} />
             }
-            <div className="div3"></div>
+            <Newsletter />
         </div>
     );
 }
