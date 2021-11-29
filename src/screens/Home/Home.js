@@ -8,25 +8,25 @@ import './styles.scss';
 
 export function Home() {
     const [clients, setClients] = useState([]);
+    const [services, setServices] = useState([])
 
     useEffect(() => {
         api.get('clients')
             .then((response) => setClients(response.data))
-            .catch(err => console.error('[error] ' + err))
+            .catch(err => console.error('[error] ' + err));
+        
+            api.get('services')
+            .then((response) => setServices(response.data))
+            .catch(err => console.error('[error] ' + err));
     }, []);
-
-    console.log('clientes = ', clients)
-    console.log('clientes length = ', clients.length)
     
     return (
         <div id="container">
             <Banner />
             {
                 clients.length > 0 &&
-                <ClientsField clients={clients} />
+                <ClientsField clients={clients} services={services} />
             }
-
-            
             <div className="div3"></div>
         </div>
     );
