@@ -38,6 +38,8 @@
         width: 40vw;
         
         justify-content: space-around;
+        font-family: Roboto, sans-serif;
+        font-weight: 700;
 
         .about-button{
             display: flex;
@@ -45,7 +47,7 @@
             border-radius: 2px;
             padding: .6rem;
 
-            background: var(--green-200);
+            background: #00bdfa;
             font-size: .8em;
         }
 

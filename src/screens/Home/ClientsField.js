@@ -31,21 +31,27 @@ export function ClientsField({ clients = [], services = [] }) {
       </div>
     )
 
-  return (
-    <div className="client-container">
-      <RenderClients />
-      <RenderServices />
-    
+    const RenderCostumerService = () => (
       <div id="customer-service">
-        <h1>Atendimento ao Cliente</h1>
-        <p>
-          Precisando entrar em contato,
-          utilize nossos canais de atendimento ou consulte
-          a documentação para mais informações.
-        </p>
-        <a>Envie um Ticket</a>
-        <a>Documentação</a>
+          <h1>Atendimento ao Cliente</h1>
+          <p>
+            Precisando entrar em contato,
+            utilize nossos canais de atendimento ou consulte
+            a documentação para mais informações.
+          </p>
+
+          <div className="content-buttons">
+            <a className="ticket-button">Envie um Ticket</a>
+            <a className="doc-button">Documentação</a>
+          </div>
+        </div>
+    )
+
+    return (
+      <div className="client-container">
+        <RenderClients />
+        <RenderServices />
+        <RenderCostumerService />        
       </div>
-    </div>
-  );
+    );
 }
