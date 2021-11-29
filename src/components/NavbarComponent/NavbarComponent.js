@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   Navbar,
   Nav,
-  NavDropdown,
   Container,
 } from "react-bootstrap";
 import {
@@ -11,7 +10,6 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import { AiOutlineSearch } from 'react-icons/ai';
 
 import { Home } from '../../screens/Home/Home';
 import { About } from '../../screens/About';
@@ -25,8 +23,19 @@ import { Logo } from '../../components/Logo/Logo';
 
 import './NavbarComponent.scss';
 
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+
+  return {
+    width,
+    height
+  };
+}
+
 export function NavbarComponent() {
   const [expanded, setExpanded] = useState(false);
+  // const [fontColor, setFontColor] = useState('');
+  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
 
   const hideNav = () => {
     return setExpanded(expanded ? false : "expanded")
@@ -36,21 +45,15 @@ export function NavbarComponent() {
     <Router>
       {/* navbar */}
       <div>
-        <Navbar bg="none" variant={"light"} expand="lg" expanded={expanded}>
+        <Navbar bg="none" variant={windowDimensions.width > 991 ? "dark" : "light"} expand="lg" expanded={expanded}>
           <Container className="nav-container">
             <Navbar.Brand as={Link} to={"/home"} onClick={hideNav} >
-              <Logo 
-                firstColor={expanded && "#009eef"} 
-                secondColor={expanded && "#c7c7c7" }
-              />
+              <Logo />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={hideNav} />
 
             <Navbar.Collapse id="basic-navbar-nav" className="colapsive-nav">
               <Nav className="me-auto">
-                {/* <Nav.Link as={Link} to={"/home"}>
-                  Home
-                </Nav.Link> */}
                 <Nav.Link as={Link} to={"/about"} onClick={hideNav}>
                   Sobre
                 </Nav.Link>
@@ -60,26 +63,9 @@ export function NavbarComponent() {
                 <Nav.Link as={Link} to={"/developers"} onClick={hideNav}>
                   Desenvolvedores
                 </Nav.Link>
-
-                <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                  <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">
-                    Another action
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3">
-                    Something
-                  </NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">
-                    Separated link
-                  </NavDropdown.Item>
-                </NavDropdown>
               </Nav>
 
               <Nav>
-                <Nav.Link as={Link} to={"/home"} onClick={hideNav}>
-                    <AiOutlineSearch />
-                </Nav.Link>
                 <Nav.Link as={Link} to={"/help"} onClick={hideNav}>
                   Ajuda
                 </Nav.Link>

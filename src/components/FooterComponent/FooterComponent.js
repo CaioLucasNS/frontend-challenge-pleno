@@ -8,7 +8,7 @@ export function FooterComponent() {
     <footer>
       <div id="container-footer">
         <div className="logo">
-          <Logo firstColor="#009eef" secondColor="#c7c7c7" />
+          <Logo />
         </div>
 
         <div className="content-footer">
